@@ -2121,6 +2121,16 @@ figure.highlight pre .javascript .function {
     width: 100% !important;
   }
 }
+@media screen and (min-width: 900px) {
+  .layout > div:first-child {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -o-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+  }
+}
 .layout.hide-aside {
   max-width: 1000px;
 }
@@ -2439,7 +2449,7 @@ h1.page-title + .tag-cloud-list {
 }
 @media screen and (min-width: 900px) {
   #aside-content {
-    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -5610,6 +5620,21 @@ blockquote.pullquote.right {
 @import 'https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css';
 body {
   cursor: default;
+}
+.avatar-img img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  border-radius: 50%;
+  animation: light 2s ease-in-out infinite alternate;
+}
+@keyframes light{
+  from{
+    box-shadow: 0px 0px 4px #f00;
+  }
+  to{
+    box-shadow: 0px 0px 16px #f00;
+  }
 }
 .search-dialog {
   position: fixed;
