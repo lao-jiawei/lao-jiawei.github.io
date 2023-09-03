@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>【hexo自定义样式】——butterfly主题设置头像不转动</title>
+      <link href="/posts/e2e00a5.html"/>
+      <url>/posts/e2e00a5.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ol><li><p>看完本文可实现</p><ul><li><input checked="" disabled="" type="checkbox"> hexo基于butterfly主题的头像动画鼠标hover时不会触发转动动画</li><li><input checked="" disabled="" type="checkbox"> 自定义设置头像的呼吸光环动画</li><li><input checked="" disabled="" type="checkbox"> 了解CSS实现呼吸光环动画的原理</li></ul></li><li><p>实现的前提</p><ol><li>需要事先了解hexo博客的基本构建</li><li>了解如何设置hexo-butterfly主题</li><li>了解如何使自己的样式在hexo-butterfly主题中生效</li></ol></li></ol><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><blockquote><p>取消头像转动动画</p></blockquote><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.avatar-img</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>给头像增加呼吸光圈</p></blockquote><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.avatar-img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">animation</span>: light <span class="number">2s</span> ease-in-out infinite alternate;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> light &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">15px</span> yellow;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">40px</span> yellow;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><p><code>animation</code><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation">MDN文档</a></p><ul><li><code>animation-name</code>：指定一个或多个<code>@keyframes</code>动画名称</li><li><code>animation-duration</code>：完成一个动画周期所需的时间。</li><li><code>animation-timing-function</code>：动画在每个周期的持续时间内如何进行。<ul><li><code>ease-in-out</code>：动画属性一开始缓慢变化，随后加速变化，最后再次减速变化。</li></ul></li><li><code>animation-iteration-count</code>：动画序列在停止前应播放的次数。<ul><li><code>infinite</code>：无限循环</li></ul></li><li><code>animation-direction</code>：设置动画播放方向。<ul><li><code>alternate</code>：动画在每个循环中正反交替播放，第一次迭代是<em>正向</em>播放。确定循环是奇数还是偶数的计数从 1 开始。</li></ul></li></ul></li><li><p><code>@keyframes</code><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@keyframes">MDN文档</a></p></li><li><p><code>box-shadow</code><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow">MDN文档</a></p><ul><li><code> X 轴偏移量</code></li><li><code>Y 轴偏移量</code></li><li><code>模糊半径</code></li><li><code>扩散半径</code></li><li><code>颜色</code></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 【hexo自定义样式】 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/posts/4a17b156.html"/>
+      <url>/posts/4a17b156.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
