@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>【手写JS库】Array-push</title>
+      <link href="/posts/2e6ea0af.html"/>
+      <url>/posts/2e6ea0af.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【手写JS库】Array.includes</title>
+      <link href="/posts/c1d33655.html"/>
+      <url>/posts/c1d33655.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ol><li>看完本文可以<ul><li><input checked="" disabled="" type="checkbox"> 了解array.includes的基本用法</li><li><input checked="" disabled="" type="checkbox"> 了解如何手写实现Javascript原生库中实现array.includes方法</li><li><input disabled="" type="checkbox"> 了解ECMAScript标准下原生array.includes代码</li></ul></li></ol><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><ul><li>用来判断一个数组是否包含一个指定的值<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">MDN文档</a></li></ul><h2 id="手写实现"><a href="#手写实现" class="headerlink" title="手写实现"></a>手写实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyArray</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">array = []</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">array</span> = array;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">includes</span>(<span class="params">searchElement, fromIndex = <span class="number">0</span></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> startIndex = <span class="title class_">Number</span>(fromIndex);</span><br><span class="line">    <span class="keyword">const</span> arr = [...<span class="variable language_">this</span>.<span class="property">array</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (startIndex &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      startIndex = <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (startIndex &gt;= arr.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isNaN</span>(searchElement)) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = startIndex, len = arr.<span class="property">length</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">isNaN</span>(arr[i])) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = startIndex, len = arr.<span class="property">length</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[i], searchElement);</span><br><span class="line">        <span class="keyword">if</span> (arr[i] === searchElement) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//测试示例(以下测试用例皆为MDN出现过的示例)</span></span><br><span class="line"><span class="keyword">const</span> myArray = <span class="keyword">new</span> <span class="title class_">MyArray</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="keyword">const</span> pets = <span class="keyword">new</span> <span class="title class_">MyArray</span>([<span class="string">&#x27;cat&#x27;</span>, <span class="string">&#x27;dog&#x27;</span>, <span class="string">&#x27;bat&#x27;</span>]);</span><br><span class="line"><span class="keyword">const</span> arrayHasNan = <span class="keyword">new</span> <span class="title class_">MyArray</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="title class_">NaN</span>]);</span><br><span class="line"><span class="keyword">const</span> arrayHasUndefined = <span class="keyword">new</span> <span class="title class_">MyArray</span>([<span class="number">1</span>, , <span class="number">3</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(&#123;</span><br><span class="line">  <span class="string">&#x27;测试includes方法&#x27;</span>: &#123;</span><br><span class="line">     <span class="string">&#x27;示例——数组包含数&#x27;</span>: myArray.<span class="title function_">includes</span>(<span class="number">2</span>),</span><br><span class="line">     <span class="string">&#x27;示例——数组不包含数&#x27;</span>: myArray.<span class="title function_">includes</span>(<span class="number">4</span>),</span><br><span class="line">     <span class="string">&#x27;示例——数组包含字符&#x27;</span>: pets.<span class="title function_">includes</span>(<span class="string">&#x27;cat&#x27;</span>),</span><br><span class="line">     <span class="string">&#x27;示例——数组不包含字符&#x27;</span>: pets.<span class="title function_">includes</span>(<span class="string">&#x27;at&#x27;</span>),</span><br><span class="line">     <span class="string">&#x27;示例——数组fromIndex为超出数组长度&#x27;</span>: myArray.<span class="title function_">includes</span>(<span class="number">3</span>, <span class="number">3</span>),</span><br><span class="line">     <span class="string">&#x27;示例——数组fromIndex为负数&#x27;</span>: myArray.<span class="title function_">includes</span>(<span class="number">3</span>, -<span class="number">1</span>),</span><br><span class="line">     <span class="string">&#x27;示例——数组存在Nan匹配&#x27;</span>: arrayHasNan.<span class="title function_">includes</span>(<span class="title class_">NaN</span>),</span><br><span class="line">     <span class="string">&#x27;示例——数组存在underfined匹配&#x27;</span>: arrayHasNan.<span class="title function_">includes</span>(<span class="literal">undefined</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;）</span><br></pre></td></tr></table></figure><h2 id="ECMAScript标准下实现"><a href="#ECMAScript标准下实现" class="headerlink" title="ECMAScript标准下实现"></a>ECMAScript标准下实现</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 【手写JS库】 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【hexo自定义样式】——butterfly主题设置头像不转动</title>
       <link href="/posts/e2e00a5.html"/>
       <url>/posts/e2e00a5.html</url>
@@ -13,14 +51,14 @@
       
       <categories>
           
-          <category> css </category>
+          <category> 【hexo自定义样式】 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 【hexo自定义样式】 </tag>
+            <tag> CSS </tag>
             
         </tags>
       
